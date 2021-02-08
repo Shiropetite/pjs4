@@ -1,0 +1,14 @@
+
+<div class="date" *ngIf="task">
+  <p *ngIf="this.isToday()"> Aujourd'hui </p>
+  <p *ngIf="!this.isToday()"> {{this.toString(task.date)}} </p>
+</div>
+
+<div class="description" *ngIf="task">
+  <p>
+    - {{task.description}}
+  </p>
+
+  <input type="checkbox" [checked]="task.isChecked"/>
+  <label> Fait </label>
+</div>

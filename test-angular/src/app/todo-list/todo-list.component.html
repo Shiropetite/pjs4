@@ -1,0 +1,12 @@
+<h1> Todo List </h1>
+
+<button mat-raised-button (click)="openDialog()">Ajouter</button>
+
+<app-task *ngFor="let task of tasks" [task]="task">
+</app-task>
+
+<li *ngIf="todo">
+  You chose: <i>{{todo.date.getDate()}} / {{todo.date.getMonth() + 1}} / {{todo.date.getFullYear()}}</i> + <i>{{todo.description}}</i>
+</li>
+
+
