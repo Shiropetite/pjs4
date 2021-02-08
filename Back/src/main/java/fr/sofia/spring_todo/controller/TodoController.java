@@ -17,10 +17,11 @@ public class TodoController {
         return todoList;
     }
 
-    @PostMapping()
-    public void createTodo(@RequestBody Todo todo){
+    @PostMapping
+    public Todo createTodo(@RequestBody Todo todo){
         System.out.println("j'add");
 	    todoList.add(todo);
+	    return todo;
     }
 
     @DeleteMapping("/{id}")
