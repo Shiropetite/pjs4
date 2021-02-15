@@ -2,19 +2,19 @@
 
 <div mat-dialog-content>
   <mat-form-field>
-    <mat-label>Date</mat-label>
+    <mat-label [ngClass]="error" >Date</mat-label>
     <input matInput [(ngModel)]="data.date" [matDatepicker]="picker">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Description</mat-label>
-    <input matInput [(ngModel)]="data.description">
+    <mat-label [ngClass]="error">Description</mat-label>
+    <textarea matInput [(ngModel)]="data.description"></textarea>
   </mat-form-field>
 </div>
 
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onClick(data)" cdkFocusInitial>Ok</button>
 </div>

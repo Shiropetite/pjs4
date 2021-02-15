@@ -3,6 +3,7 @@ import {Todo} from '../Todo';
 import {todos} from '../todos';
 import {NewTaskComponent} from '../new-task/new-task.component';
 import {MatDialog} from '@angular/material/dialog';
+import {TodoService} from '../services/todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,7 +17,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private service: TodoService) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(NewTaskComponent, {
@@ -25,8 +26,7 @@ export class TodoListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.tasks.push(result);
+      this.service.addTodo();
     });
   }
 

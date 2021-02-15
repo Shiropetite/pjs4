@@ -9,6 +9,7 @@ import {Todo} from '../Todo';
   styleUrls: ['./new-task.component.scss']
 })
 export class NewTaskComponent implements OnInit {
+  public error = '';
 
   constructor(
     public dialogRef: MatDialogRef<NewTaskComponent>,
@@ -19,6 +20,17 @@ export class NewTaskComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onClick(data: Todo): void {
+    if (data.date === undefined || data.description === undefined){
+      this.error = 'error';
+    }
+    else {
+      this.dialogRef.close(data);
+      this.error = '';
+    }
+
   }
 
 }

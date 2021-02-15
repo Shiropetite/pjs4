@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Todo} from '../Todo';
+import {TodoService} from '../services/todo.service';
 
 @Component({
   selector: 'app-task',
@@ -9,9 +10,17 @@ import {Todo} from '../Todo';
 export class TaskComponent implements OnInit {
   @Input() task: Todo | undefined;
 
-  constructor() {}
+  constructor(private service: TodoService) {}
 
   ngOnInit(): void {
+  }
+
+  check(): void {
+    this.service.changeCheckTodo();
+  }
+
+  delete(): void {
+    this.service.deleteTodo();
   }
 
   isToday(): boolean {
@@ -26,7 +35,15 @@ export class TaskComponent implements OnInit {
   }
 
   toString(date: Date): string {
-    return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+    let day = '';
+    let month = ''
+    if (date.getDate() < 10) {
+      day += '0';
+    }
+    if (date.getMonth() + 1 < 10) {
+      month += '0';
+    }
+    return day + date.getDate() + ' / ' + month + (date.getMonth() + 1) + ' / ' + date.getFullYear();
   }
 
 }

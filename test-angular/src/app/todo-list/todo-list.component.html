@@ -1,12 +1,14 @@
-<h1> Todo List </h1>
+<div class="en-tete"> <div></div> <div class="titre">Todo List</div>
+  <button class="ajouter" (click)="openDialog()">+</button>
+</div>
 
-<button mat-raised-button (click)="openDialog()">Ajouter</button>
+<div class="task">
+  <app-task *ngFor="let task of tasks" [task]="task">
+  </app-task>
+</div>
 
-<app-task *ngFor="let task of tasks" [task]="task">
-</app-task>
 
-<li *ngIf="todo">
-  You chose: <i>{{todo.date.getDate()}} / {{todo.date.getMonth() + 1}} / {{todo.date.getFullYear()}}</i> + <i>{{todo.description}}</i>
-</li>
+
+
 
 

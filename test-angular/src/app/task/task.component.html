@@ -1,14 +1,21 @@
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <div class="date" *ngIf="task">
   <p *ngIf="this.isToday()"> Aujourd'hui </p>
   <p *ngIf="!this.isToday()"> {{this.toString(task.date)}} </p>
 </div>
 
 <div class="description" *ngIf="task">
-  <p>
-    - {{task.description}}
-  </p>
+  <div>
+    <p>
+      - {{task.description}}
+    </p>
 
-  <input type="checkbox" [checked]="task.isChecked"/>
-  <label> Fait </label>
+    <input type="checkbox" (change)="check()" [checked]="task.isChecked"/>
+    <label> Fait </label>
+  </div>
+  <div>
+    <button (click)="delete()" class="delete fa fa-2x fa-trash-o"> </button>
+  </div>
 </div>
+
+

@@ -1,8 +1,7 @@
 .date {
-  border: medium solid #1949A5;
- // border-radius: 10px 10px 0px 0px;
   background-color: #1949A5;
   color: white;
+  padding: 5px 5px;
 }
 
 .date p {
@@ -10,16 +9,25 @@
 }
 
 .description {
-  border: medium solid #1949A5;
- // border-radius: 0px 0px 10px 10px;
   padding: 10px;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
 }
 
 .description p {
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 
 .description label {
   margin-left: 5px;
+}
+
+.delete {
+  color: #FFFFFF;
+  background-color: #777;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 
