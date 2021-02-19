@@ -1,0 +1,27 @@
+
+<div class="cardContainer" *ngIf="announcement; else noAnnouncement">
+  <div class="announcementCard">
+    <div class="announcementHeader">
+      {{announcement.author}} {{announcement.date | date:'EEEE d MMMM YYYY' : '' : 'fr'}}
+    </div>
+    <div class="announcementContent">
+      <h5>{{announcement.title}}</h5>
+      {{announcement.content}}
+    </div>
+    <div class="announcementFooter">
+      Lire la suite
+    </div>
+  </div>
+</div>
+
+<ng-template #noAnnouncement class="cardContainer">
+  <div class="announcementCard">
+    <div class="announcementHeader">
+      Aucune annonce!
+    </div>
+    <div class="announcementContent">
+      Vous êtes à jour.
+    </div>
+  </div>
+</ng-template>
+

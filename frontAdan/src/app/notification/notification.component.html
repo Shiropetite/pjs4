@@ -1,0 +1,6 @@
+
+
+<div class="cardContainer" *ngIf="notificationContent; else noNotification">{{notificationContent}}</div>
+<ng-template #noNotification>
+  <p>Aucune notification à afficher !</p>
+</ng-template>

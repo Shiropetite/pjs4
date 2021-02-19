@@ -1,0 +1,24 @@
+.announcementCard{
+  background-color: white;
+  border-bottom: #1949A5 5px solid;
+
+}
+  .announcementHeader{
+    background-color: rgba(25, 75, 165, 1);
+    color: white;
+
+  }
+
+.announcementContent{
+  padding: 10px;
+  height: auto;
+  max-height: 125px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+  .announcementFooter{
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
+  }
