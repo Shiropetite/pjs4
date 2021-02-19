@@ -10,6 +10,10 @@ import { NewTaskComponent } from './new-task/new-task.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
+import {HttpClientModule} from '@angular/common/http';
+import localeFr from '@angular/common/locales/fr';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { DemoMaterialModule } from './material-module';
     FormsModule,
     NgbModule,
     NoopAnimationsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

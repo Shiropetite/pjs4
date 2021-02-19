@@ -1,5 +1,8 @@
-export interface Todo {
-  date: Date;
-  description: string;
-  isChecked: boolean;
+export class Todo {
+  constructor(
+    public id: number,
+    public date: Date,
+    public description: string,
+    public checked: boolean
+  ) { }
 }

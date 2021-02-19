@@ -16,34 +16,24 @@ export class TaskComponent implements OnInit {
   }
 
   check(): void {
-    this.service.changeCheckTodo();
+    this.service.changeCheckTodo(this.task).subscribe();
   }
 
   delete(): void {
-    this.service.deleteTodo();
+    // @ts-ignore
+    this.service.deleteTodo(this.task.id).subscribe();
+    // TODO : gerer le "refresh"
   }
 
   isToday(): boolean {
     const today = new Date();
     // @ts-ignore
-    if(this.toString(today) === this.toString(this.task.date)) {
+    if(today === this.task.date) {
       return true;
     }
     else {
       return false;
     }
-  }
-
-  toString(date: Date): string {
-    let day = '';
-    let month = ''
-    if (date.getDate() < 10) {
-      day += '0';
-    }
-    if (date.getMonth() + 1 < 10) {
-      month += '0';
-    }
-    return day + date.getDate() + ' / ' + month + (date.getMonth() + 1) + ' / ' + date.getFullYear();
   }
 
 }
