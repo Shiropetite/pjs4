@@ -26,7 +26,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('fleur');
   });
 
-  it('should render title', () => {
+  it('should render date', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
