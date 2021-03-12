@@ -1,0 +1,40 @@
+.date {
+  background-color: #1949A5;
+  color: white;
+  padding: 5px 5px;
+}
+
+.date p {
+  margin: 0px 10px;
+}
+
+.task {
+  padding: 5px 15px;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task h2 {
+  font-size: 16px;
+  margin-bottom: -5px;
+  color: #193d8f;
+}
+
+.task p {
+  margin-bottom: 5px;
+}
+
+.task label {
+  margin-left: 5px;
+}
+
+.delete {
+  color: #FFFFFF;
+  background-color: #4f5972;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
