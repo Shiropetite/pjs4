@@ -1,4 +1,11 @@
-.task {
-  margin-left: 10px;
-  width: 40%;
+.box {
+  display: flex;
+  justify-content: space-between;
+  margin : 10px;
+}
+
+.sous_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
