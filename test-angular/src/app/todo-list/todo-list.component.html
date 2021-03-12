@@ -1,0 +1,14 @@
+<div class="en-tete"> <div></div> <div class="titre">Todo List</div>
+  <button class="ajouter" (click)="openDialog()">+</button>
+</div>
+
+<div class="task">
+  <app-task *ngFor="let task of tasks" [task]="task">
+  </app-task>
+</div>
+
+
+
+
+
+
