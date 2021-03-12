@@ -28,8 +28,10 @@ export class TodoListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.service.addTodo(result).subscribe();
-      this.getTodos();
+      if (result !== undefined) {
+        this.service.addTodo(result).subscribe();
+        this.getTodos();
+      }
     });
   }
 
