@@ -1,25 +1,7 @@
-<!--<ul class="courses">-->
-<!--  <li class="course-list" *ngFor="let course of courses" (click)="onSelect(course)">-->
-<!--    <p>{{course.hour}} {{course.name}}</p>-->
-<!--    <p>{{course.room}}</p>-->
-<!--  </li>-->
-<!--</ul>-->
-<!--<div *ngIf="selectedCourse" class="course-details">-->
-<!--  <h4>Détails du cours <label>{{selectedCourse.name | uppercase}}</label></h4>-->
-<!--  <div><label>Identifiant : </label> {{selectedCourse.id}}</div>-->
-<!--  <div>-->
-<!--    <label>Enseignant :-->
-<!--      <input [(ngModel)]="selectedCourse.teacher" placeholder="teacher"/>-->
-<!--    </label>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="en-tete">
+  {{today }}
+</div>
 
-<!--<mat-nav-list>-->
-<!--  <a mat-list-item *ngFor="let course of courses"> <p>{{course.hour}} {{course.name}}</p>-->
-<!--    <p>{{course.room}}</p> </a>-->
-<!--</mat-nav-list>-->
-
-<!-- two line list -->
 <mat-list class="container">
   <mat-list-item *ngFor="let course of courses" (click)="onSelect(course);">
     <h3 matLine>{{course.hour}} - {{course.name}} </h3>
@@ -30,14 +12,6 @@
     </p>
   </mat-list-item>
 </mat-list>
-<div *ngIf="selectedCourse" class="course-details">
-  <h4>Détails du cours <label>{{selectedCourse.name | uppercase}}</label></h4>
-  <div><label>Identifiant : </label> {{selectedCourse.id}}</div>
-  <div>
-    <label>Enseignant :
-      <input [(ngModel)]="selectedCourse.teacher" placeholder="teacher"/>
-    </label>
-  </div>
-</div>
+
 
 
