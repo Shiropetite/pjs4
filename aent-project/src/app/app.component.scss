@@ -1,11 +1,19 @@
 .box {
   display: flex;
   justify-content: space-between;
-  margin : 10px;
+  margin : 20px;
 }
 
 .sous_box {
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.planning {
+  width: 27%;
+}
+.notification {
+  width: 27%;
 }

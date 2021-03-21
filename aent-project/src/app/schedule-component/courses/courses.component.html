@@ -1,15 +1,14 @@
 <div class="en-tete">
-  {{today }}
+  {{ today }}
 </div>
 
 <mat-list class="container">
-  <mat-list-item *ngFor="let course of courses" (click)="onSelect(course);">
-    <h3 matLine>{{course.hour}} - {{course.name}} </h3>
-    <p matLine>
-      <span class="courses" matTooltip="{{course.name}} - {{course.room}} - {{ course.teacher}}" matTooltipShowDelay="100" matTooltipPosition="after"> {{course.room}} - {{course.teacher}} </span>
-      <mat-divider>
-      </mat-divider>
-    </p>
+  <mat-list-item *ngFor="let course of courses" (click)="onSelect(course);" [ngClass]="course.id === null ? 'no-course' : 'course'">
+      <h3 matLine>{{toStringHours(course)}} <span *ngIf="course.id">- {{ course.name}}</span> </h3>
+      <p matLine>
+        <span *ngIf="course.id" class="courses"> {{course.room}} </span>
+        <mat-divider> </mat-divider>
+      </p>
   </mat-list-item>
 </mat-list>
 

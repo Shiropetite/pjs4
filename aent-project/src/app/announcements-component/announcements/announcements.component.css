@@ -1,0 +1,31 @@
+.contour{
+  border: solid 4px rgba(25, 75, 165, 1);
+  background-color: #5D6DB3;
+  overflow-y:auto;
+  border-radius: 10px;
+  height: 215px;
+}
+/*
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: rgba(93, 109, 141, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  border: solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(25, 75, 165, 1), inset 0 0 0 6px rgba(25, 75, 165, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: inset 0 0 0 1px rgba(25, 75, 165, 0.6), inset 0 0 0 6px rgba(25, 75, 165, 0.6);
+}
+*/
+.heading {
+  background-color: #1949A5;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}

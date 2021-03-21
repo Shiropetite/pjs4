@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild, ViewChildren} from '@angular/core';
-import {Todo} from '../../Todo';
+import {Todo} from '../Todo';
 import {NewTaskComponent} from '../new-task/new-task.component';
 import {MatDialog} from '@angular/material/dialog';
 import {TodoService} from '../services/todo.service';

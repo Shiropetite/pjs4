@@ -6,10 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CoursesComponent } from './schedule-component/courses/courses.component';
-import { TaskComponent } from './Todo-component/task/task.component';
-import { TodoListComponent } from './Todo-component/todo-list/todo-list.component';
-import { NewTaskComponent } from './Todo-component/new-task/new-task.component';
+import { TaskComponent } from './todolist-component/task/task.component';
+import { TodoListComponent } from './todolist-component/todo-list/todo-list.component';
+import { NewTaskComponent } from './todolist-component/new-task/new-task.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
@@ -17,7 +16,13 @@ import {HttpClientModule} from '@angular/common/http';
 import localeFr from '@angular/common/locales/fr';
 import {registerLocaleData} from '@angular/common';
 import {ScrollingModule} from '@angular/cdk/scrolling';
-import { CourseDetailsComponent } from './schedule-component/course-details/course-details.component';
+import {CoursesComponent} from './schedule-component/courses/courses.component';
+import {CourseDetailsComponent} from './schedule-component/course-details/course-details.component';
+import {AnnouncementComponent} from './announcements-component/announcement/announcement.component';
+import {NotificationComponent} from './notification-component/notification/notification.component';
+import {NotificationsComponent} from './notification-component/notifications/notifications.component';
+import {AnnouncementsComponent} from './announcements-component/announcements/announcements.component';
+
 
 registerLocaleData(localeFr, 'fr');
 
@@ -29,7 +34,12 @@ registerLocaleData(localeFr, 'fr');
     NewTaskComponent,
     NavbarComponent,
     CoursesComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    AnnouncementComponent,
+    AnnouncementComponent,
+    NotificationComponent,
+    NotificationsComponent,
+    AnnouncementsComponent
   ],
   imports: [
     BrowserModule,

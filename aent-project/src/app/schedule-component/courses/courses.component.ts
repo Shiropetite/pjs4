@@ -4,6 +4,7 @@ import {Course} from '../course';
 import {MatDialog} from '@angular/material/dialog';
 import {CourseDetailsComponent} from '../course-details/course-details.component';
 import {formatDate} from '@angular/common';
+import {CoursesService} from '../services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -12,13 +13,18 @@ import {formatDate} from '@angular/common';
 })
 export class CoursesComponent implements OnInit {
   today: string;
-  courses = COURSES;
+  courses: Course[];
   selectedCourse?: Course;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private coursesService: CoursesService) {}
 
   ngOnInit(): void {
     this.getDate();
+    this.coursesService.getTodayCourses().subscribe(courses => this.courses = courses);
+  }
+
+  toStringHours(course: Course): string {
+    return course.date.getHours() + 'h' + ((course.date.getMinutes() < 10) ? '0' + course.date.getMinutes() : course.date.getMinutes());
   }
 
   getDate(): void {
