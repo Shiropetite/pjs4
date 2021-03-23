@@ -18,6 +18,6 @@ public class AnnouncementController {
     }
 
     public void addAnnouncements(@PathVariable("id") String id){
-        
+
     }
 }
