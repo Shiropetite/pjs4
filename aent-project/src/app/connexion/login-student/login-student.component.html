@@ -1,0 +1,14 @@
+<div class="header"> Espace Etudiant </div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+  <div class="input">
+    <label for="login"> Login </label>
+    <input required formControlName="login" id="login" type="text"/>
+  </div>
+  <div class="input">
+    <label for="password"> Mot de passe </label>
+    <input required formControlName="password" id="password" type="password"/>
+  </div>
+
+  <button type="submit"> Se connecter </button>
+</form>
+

@@ -18,32 +18,32 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    //Methode Endpoint
     @GetMapping
     public List<Todo> getTodos() {
-        return Arrays.asList(
-                new Todo("Billy", new Date(120, 7, 20), "Faire les courses", "Acheter des tomates et des oignons")
-        );
+        return todoService.getTodos();
     }
 
+    @PostMapping
+    public void addTodo(@RequestBody Todo todo) {
+        todoService.addTodo(todo);
+    }
+
+    @PutMapping
+    public void changeStateTodo(@RequestBody Todo todo) {
+        todoService.changeStateTodo(todo);
+    }
+
+    @DeleteMapping("/{id}")
+    public void removeTodo(@PathVariable("id") int id) { //needs a TasknotfoundException
+        todoService.deleteTodo(id);
+    }
+
+    /*
     @GetMapping("/{user}")
     public Todo getTodoFromId(@PathVariable("user") String user) {
         // Query all the todos from this very suer
         return null;
     }
-
-    /*
-        @GetMapping
-        public List<Todo> getTodos(@RequestParam("id") String todoid){
-            return null;
-        }
     */
 
-    public boolean removeTodo(@RequestParam("id") String todoid) { //needs a TasknotfoundException
-        return true;
-    }
-
-    public Todo switchAckTodo(@RequestParam("id") String todoid) { //tick goes from T to F or F to T
-        return null;
-    }
 }
