@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {Announcement} from '../Announcement';
-import {announcements} from '../mock-announcements';
 
 @Component({
   selector : 'app-announcement',

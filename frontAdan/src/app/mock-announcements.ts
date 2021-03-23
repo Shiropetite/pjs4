@@ -1,7 +1,7 @@
-
 import {Announcement} from './Announcement';
 
 export const announcements: Announcement[] = [
+  // tslint:disable-next-line:max-line-length
   { id: 11, date : new Date(), author : 'Sébastien Martin', title: 'Dr Nice', content : 'Lorem ipsum dolor sit ametn viverra mattis varius.' },
   { id: 12, date : new Date(), author : 'Sébastien Martin', title: 'Narco' ,  content : 'Vestibulctum'},
   { id: 13, date : new Date(), author : 'Sébastien Martin', title: 'Bombasto' , content : 'Proin semper justo vel tincidunt lobortis. Phasellus eu nisi vehicula, interdum lectus in, interdum nisi. Donec semper congue nisi, sed laoreet magna rhoncus id. Fusce aliquet orci efficitur diam fringilla, sit amet tempor tortor euismod. Phasellus bibendum diam sed lorem consectetur pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis consequat erat placerat enim vehicula iaculis ut vitae ipsum.'},

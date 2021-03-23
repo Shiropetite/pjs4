@@ -1,2 +1,3 @@
 <div class="heading notifications flex-container">Notifications</div>
-<app-notification></app-notification>
+
+<app-notification *ngFor="let n of notifications" [notification]="n"></app-notification>

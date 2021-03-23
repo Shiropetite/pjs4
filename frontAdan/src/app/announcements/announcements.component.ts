@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Announcement} from '../Announcement';
-import { announcements } from '../mock-announcements';
+import {announcements} from '../mock-announcements';
 
 @Component({
   selector: 'app-announcements',
