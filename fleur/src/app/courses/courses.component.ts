@@ -12,15 +12,15 @@ import {CourseDetailsComponent} from '../course-details/course-details.component
 export class CoursesComponent implements OnInit {
 
   courses = COURSES;
-  selectedCourse?: Course;
+  selectedCourse: Course | undefined;
 
   constructor(public dialog: MatDialog) {
   }
 
-  openCourseDetailsDialog(selectedCourse: Course | undefined) {
+  // Après tant de alt f4 c'est ça qui fonctionne
+  openCourseDetailsDialog() {
     this.dialog.open(CourseDetailsComponent,  {
-      data : {
-      }
+      data :  this.selectedCourse,
     });
   }
 
@@ -28,8 +28,8 @@ export class CoursesComponent implements OnInit {
   }
 
   onSelect(course: Course): void {
+    this.selectedCourse = course;
     // @ts-ignore
     this.openCourseDetailsDialog();
-    this.selectedCourse = course;
   }
 }

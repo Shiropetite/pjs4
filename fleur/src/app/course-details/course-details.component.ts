@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { COURSES } from '../mock-courses';
 import {Course} from '../course';
+import {CoursesComponent} from '../courses/courses.component';
 
 
 @Component({
@@ -12,17 +13,19 @@ import {Course} from '../course';
 export class CourseDetailsComponent implements OnInit {
 
 
-  selectedCourse?: Course;
   displayedColumns: string[] = [ 'hour', 'name', 'room', 'teacher'];
   courses = COURSES;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: Course) {
+
+  }
 
   ngOnInit(): void {
+    console.log(this.data);
+
   }
 
-  onSelect(course: Course): void {
-    this.selectedCourse = course;
-  }
 
 }

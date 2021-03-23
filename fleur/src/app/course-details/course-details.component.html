@@ -1,1 +1,7 @@
-<p>hello je suis course-details.component.html et j'arrive pas à afficher le contenu des cours ça me soule</p>
+<h4>Détails du cours <label>{{data.name| uppercase}}</label></h4>
+<div><label>Identifiant : </label> {{data.id}}</div>
+<div>
+  <label>Enseignant :
+    <input [(ngModel)]="data.teacher" placeholder="teacher"/>
+  </label>
+</div>
