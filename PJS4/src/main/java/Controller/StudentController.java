@@ -10,14 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/Student")
 public class StudentController {
+    private final StudentService studentService;
 
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     public Student getStudent(String login, String password){
-        return StudentService.getStudent(login, password);
+        return studentService.getStudent(login, password);
     }
 
     public Student getStudent(int id_student){
-        return StudentService.getStudent(id_student);
+        return studentService.getStudent(id_student);
     }
 
 }
