@@ -1,28 +1,36 @@
 package com.enteam.app;
 
+import java.util.Date;
+
 public class Todo {
 
-    private String user;
-    private String id;
+    private Integer user;
+    private Integer id;
+    private Date date;
     private String title;
     private String description;
     private boolean tick;
 
-    public Todo(String user, String id, String title, String description, boolean tick) {
+    public Todo(Integer user, Integer id, Date date, String title, String description, boolean tick) {
         this.user = user;
         this.id = id;
+        this.date = date;
         this.title = title;
         this.description = description;
         this.tick = tick;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
+
+    public Date getDate(){return date;}
+
+    public void setDate(Date date){this.date=date;}
 
     public String getTitle() {
         return title;
@@ -40,11 +48,11 @@ public class Todo {
         this.description = description;
     }
 
-    public String getUser() {
+    public Integer getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(Integer user) {
         this.user = user;
     }
 
@@ -52,7 +60,16 @@ public class Todo {
         return tick;
     }
 
-    public void setTick(boolean tick) {
-        this.tick = tick;
+    public void setTick() {
+        this.tick = !this.tick;
+    }
+
+    public boolean isEqual(Todo todo){
+        return this.user.equals(todo.getUser())
+                && this.id.equals(todo.id)
+                && this.title.equals(todo.getTitle())
+                && this.date.equals(todo.getDate())
+                && this.description.equals(todo.getDescription())
+                && this.tick == todo.isTick();
     }
 }

@@ -1,10 +1,11 @@
 package com.enteam.app.controllers;
 
 import com.enteam.app.Todo;
+import com.enteam.app.serviceImpl.TodoServiceImpl;
 import com.enteam.app.services.TodoService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -13,33 +14,34 @@ public class TodoController {
 
     private final TodoService todoService;
 
+    private ArrayList<Todo> elems;
+
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
+
     //Methode Endpoint
     @GetMapping
     public List<Todo> getTodos(){
-        return Arrays.asList(
-                new Todo("Billy","4","Faire les courses","Acheter des tomates et des oignons", false)
-        );
+        return todoService.getTodos();
     }
 
     @GetMapping("/{user}")
-    public Todo getTodoFromId(@PathVariable("user") String user){
-	    // Query all the todos from this very suer
-        return null;
+    public Todo getTodoFromId(@PathVariable("user") Integer id){
+        return todoService.getTodoFromId(id);
     }
 
     @GetMapping
-    public List<Todo> getTodos(@RequestParam("id") String todoid){
-        return null;
+    public boolean addTodo(@RequestBody Todo todo){
+        return todoService.addTodo(todo);
     }
 
-    public boolean removeTodo(@RequestParam("id") String todoid){ //needs a TasknotfoundException
-        return true;
+    @GetMapping
+    public boolean removeTodo(@RequestParam("id") Integer todoid){
+        return todoService.removeTodo(todoid);
     }
-
-    public Todo switchAckTodo(@RequestParam("id") String todoid){ //tick goes from T to F or F to T
-        return null;
+    @GetMapping
+    public Todo switchAckTodo(@RequestParam("id") Integer todoid){ //tick goes from T to F or F to T
+        return todoService.switchAckTodo(todoid);
     }
 }
