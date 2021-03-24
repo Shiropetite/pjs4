@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {notifications} from '../mock-notifications';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
+  url = 'http://localhost:8080/api/notificationFeed';
 
-  constructor() { }
+  constructor( private http: HttpClient ) { }
 
   getNotifications(): Observable<Notification[]>{
-    // @ts-ignore
-    return of(notifications);
+    return this.http.get<Notification[]>(this.url);
   }
 }

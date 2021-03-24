@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-<div class="date" *ngIf="task">
+<div class="taskHeader" *ngIf="task">
   <p *ngIf="this.isToday()"> Aujourd'hui </p>
   <p *ngIf="!this.isToday()"> {{task.date | date: 'EEEE d MMMM YYYY' : '' : 'fr'}} </p>
 </div>
 
-<div class="task" *ngIf="task">
+<div class="taskContent" *ngIf="task">
   <div>
     <h2> {{task.title}} </h2>
     <p> {{task.description}} </p>

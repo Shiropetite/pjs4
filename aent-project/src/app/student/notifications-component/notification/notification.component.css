@@ -1,19 +1,20 @@
-.notificationCard {
-  background-color: white;
-}
-
 .notificationHeader {
   background-color: #1949A5;
   color: white;
   padding: 5px 5px;
 }
 
+.notificationHeader p {
+  margin: 0px 10px;
+}
+
 .notificationContent {
-  padding: 10px;
-  height: auto;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  padding: 5px 15px;
+  background-color: #FFF;
+}
+
+.notificationContent p {
+  margin: 5px 10px;
 }
 
 .notificationFooter {

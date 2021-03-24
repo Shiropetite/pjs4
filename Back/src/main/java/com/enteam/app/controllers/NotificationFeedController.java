@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("/api/NotificationFeed")
+@RequestMapping("/api/notificationFeed")
 public class NotificationFeedController {
 
     private final NotificationFeedService notificationFeedService;
@@ -24,8 +25,8 @@ public class NotificationFeedController {
     @GetMapping
     public List<Notification> getNotificationFeed(){
         return Arrays.asList(
-                new Notification("1","Absence","You were absent on the 36/02/24, please contact your administration to justify your absence","Important"),
-                new Notification("2","Annonce","haha code funny","Basic")
+                new Notification(1,new Date(121,3,20),"You were absent on the 36/02/24, please contact your administration to justify your absence"),
+                new Notification(2,new Date(121,2,20),"haha code funny")
         );
     }
 

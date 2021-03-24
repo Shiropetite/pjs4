@@ -9,8 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
-    /*
-    @Query("SELECT s.id FROM Student s WHERE s.email = :email AND s.password = :password")
-    public Optional<Student> findByLoginAndPassword(String login, String password);
-     */
+
+    public Optional<Student> findStudentByEmailAndPassword(String login, String password);
+
 }

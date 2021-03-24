@@ -1,14 +1,14 @@
-.date {
+.taskHeader {
   background-color: #1949A5;
   color: white;
   padding: 5px 5px;
 }
 
-.date p {
+.taskHeader p {
   margin: 0px 10px;
 }
 
-.task {
+.taskContent {
   padding: 5px 15px;
   background-color: #FFF;
   display: flex;
@@ -16,17 +16,17 @@
   align-items: center;
 }
 
-.task h2 {
+.taskContent h2 {
   font-size: 16px;
   margin-bottom: -7px;
   color: #193d8f;
 }
 
-.task p {
+.taskContent p {
   margin-bottom: 5px;
 }
 
-.task label {
+.taskContent label {
   margin-left: 5px;
 }
 
