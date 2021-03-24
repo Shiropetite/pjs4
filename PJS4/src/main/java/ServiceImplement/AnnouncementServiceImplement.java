@@ -13,7 +13,7 @@ public class AnnouncementServiceImplement implements AnnouncementService {
     private AnnouncementRepository announcementRepository;
 
     public AnnouncementServiceImplement (AnnouncementRepository announcementRepository){
-
+        this.announcementRepository = announcementRepository;
     }
 
     @Override
