@@ -1,7 +1,7 @@
 package com.enteam.app.services;
 
-import com.enteam.app.Todo;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.enteam.app.ressouces.Todo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -9,9 +9,11 @@ public interface TodoService {
 
     public List<Todo> getTodos();
 
-    public void addTodo(Todo todo);
+   public Todo getTodoFromId(Integer id);
 
-    public void changeStateTodo(Todo todo);
+    public boolean addTodo(Todo todo);
 
-    public void deleteTodo(int id);
+    public boolean removeTodo(Integer toDoId);
+
+    public Todo switchAckTodo(Integer toDoId);
 }

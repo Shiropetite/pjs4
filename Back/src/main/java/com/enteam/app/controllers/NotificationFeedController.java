@@ -1,6 +1,6 @@
 package com.enteam.app.controllers;
 
-import com.enteam.app.notifying.Notification;
+import com.enteam.app.ressouces.Notification;
 import com.enteam.app.services.NotificationFeedService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,9 +28,5 @@ public class NotificationFeedController {
                 new Notification("2","Annonce","haha code funny","Basic")
         );
     }
-
-    /*public List<Notification> getNotificationFeedFromId(@PathVariable("id") String id){
-        //filters url that filter through
-    }*/
 
 }

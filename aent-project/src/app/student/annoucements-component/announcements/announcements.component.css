@@ -5,21 +5,7 @@
   border-radius: 10px;
   height: 215px;
 }
-/*
-::-webkit-scrollbar {
-  width: 15px;
-  background-color: rgba(93, 109, 141, 1);
-}
 
-::-webkit-scrollbar-thumb {
-  border: solid transparent;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 0 1px rgba(25, 75, 165, 1), inset 0 0 0 6px rgba(25, 75, 165, 1);
-}
-::-webkit-scrollbar-thumb:hover {
-  -webkit-box-shadow: inset 0 0 0 1px rgba(25, 75, 165, 0.6), inset 0 0 0 6px rgba(25, 75, 165, 0.6);
-}
-*/
 .heading {
   background-color: #1949A5;
   border-radius: 15px;
@@ -29,3 +15,18 @@
   font-size: 20px;
   color: white;
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #5D6DB3;
+}
+
+::-webkit-scrollbar-thumb {
+  border: solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 0 1px rgb(255, 255, 255), inset 0 0 0 6px rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: inset 0 0 0 1px rgba(223, 235, 255, 0.6), inset 0 0 0 6px rgba(230, 238, 255, 0.6);
+}
+

@@ -1,11 +1,9 @@
 package com.enteam.app.controllers;
 
-import com.enteam.app.Todo;
+import com.enteam.app.ressouces.Todo;
 import com.enteam.app.services.TodoService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -14,36 +12,36 @@ import java.util.List;
 public class TodoController {
     private final TodoService todoService;
 
+    private List<Todo> elems;
+
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
 
+    //Methode Endpoint
     @GetMapping
-    public List<Todo> getTodos() {
+    public List<Todo> getTodos(){
         return todoService.getTodos();
     }
 
+    @GetMapping("/{user}")
+    public Todo getTodoFromId(@PathVariable("user") Integer id){
+        return todoService.getTodoFromId(id);
+    }
+
     @PostMapping
-    public void addTodo(@RequestBody Todo todo) {
-        todoService.addTodo(todo);
+    public boolean addTodo(@RequestBody Todo todo){
+        return todoService.addTodo(todo);
+    }
+
+    @DeleteMapping
+    public boolean removeTodo(@RequestParam("id") Integer todoid){
+        return todoService.removeTodo(todoid);
     }
 
     @PutMapping
-    public void changeStateTodo(@RequestBody Todo todo) {
-        todoService.changeStateTodo(todo);
+    public Todo switchAckTodo(@RequestParam("id") Integer todoid){ //tick goes from T to F or F to T
+        return todoService.switchAckTodo(todoid);
     }
-
-    @DeleteMapping("/{id}")
-    public void removeTodo(@PathVariable("id") int id) { //needs a TasknotfoundException
-        todoService.deleteTodo(id);
-    }
-
-    /*
-    @GetMapping("/{user}")
-    public Todo getTodoFromId(@PathVariable("user") String user) {
-        // Query all the todos from this very suer
-        return null;
-    }
-    */
 
 }

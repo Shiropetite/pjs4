@@ -1,6 +1,24 @@
+<div class="cardContainer" *ngIf="notification; else noNotification">
+  <div class="notificationCard">
+    <div class="notificationHeader">
+      {{notification.date | date:'EEEE d MMMM YYYY' : '' : 'fr'}}
+    </div>
+    <div class="notificationContent">
+      {{notification.content}}
+    </div>
+    <div class="notificationFooter">
+      <a href=""> Lire la suite </a>
+    </div>
+  </div>
+</div>
 
-
-<div class="cardContainer" *ngIf="notificationContent; else noNotification">{{notificationContent}}</div>
-<ng-template #noNotification>
-  <p>Aucune notification à afficher !</p>
+<ng-template #noNotification class="cardContainer">
+  <div class="notificationCard">
+    <div class="notificationHeader">
+      Aucune notification !
+    </div>
+    <div class="notificationContent">
+      Vous êtes à jour.
+    </div>
+  </div>
 </ng-template>

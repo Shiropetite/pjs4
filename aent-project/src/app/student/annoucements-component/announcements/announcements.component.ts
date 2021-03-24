@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Announcement} from '../Announcement';
-import { announcements } from '../mock-announcements';
+import {AnnouncementService} from '../service/announcement.service';
 
 @Component({
   selector: 'app-announcements',
@@ -8,10 +8,15 @@ import { announcements } from '../mock-announcements';
   styleUrls: ['./announcements.component.css']
 })
 export class AnnouncementsComponent implements OnInit {
-  announcements: Announcement[] = announcements;
-  constructor() {
-  }
+  announcements: Announcement[];
+
+  constructor(private serviceAnnouncement: AnnouncementService) {  }
 
   ngOnInit(): void {
+    this.getAnnouncements();
+  }
+
+  getAnnouncements(): void {
+    this.serviceAnnouncement.getAnnouncements().subscribe(response => this.announcements = response);
   }
 }

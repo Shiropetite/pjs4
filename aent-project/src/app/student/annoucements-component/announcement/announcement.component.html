@@ -2,7 +2,7 @@
 <div class="cardContainer" *ngIf="announcement; else noAnnouncement">
   <div class="announcementCard">
     <div class="announcementHeader">
-      {{announcement.author}} {{announcement.date | date:'EEEE d MMMM YYYY' : '' : 'fr'}}
+      {{announcement.author}} - {{announcement.date | date:'EEEE d MMMM YYYY' : '' : 'fr'}}
     </div>
     <div class="announcementContent">
       <h2>{{announcement.title}}</h2>
