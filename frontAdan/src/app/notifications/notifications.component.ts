@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Notification} from '../Notification';
 import {NotificationsService} from './services/notifications.service';
 
+
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
@@ -18,5 +19,7 @@ export class NotificationsComponent implements OnInit {
   getNotification(): void{
     this.service.getNotifications().subscribe(response => this.notifications = response);
   }
-
+  getNotificationCount(): number | undefined{
+    return this.notifications?.length;
+  }
 }

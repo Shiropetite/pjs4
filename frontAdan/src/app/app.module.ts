@@ -12,6 +12,7 @@ import {AnnouncementsComponent} from './announcements/announcements.component';
 import {NotificationsComponent} from './notifications/notifications.component';
 import {registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import {MatBadgeModule} from '@angular/material/badge';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -28,7 +29,8 @@ registerLocaleData(localeFr, 'fr');
         BrowserModule,
         AppRoutingModule,
         NoopAnimationsModule,
-        MatCardModule
+        MatCardModule,
+        MatBadgeModule
     ],
   providers: [],
   bootstrap: [AppComponent]

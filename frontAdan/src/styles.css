@@ -37,6 +37,14 @@ body {
   padding: 1%;
 
 }
+.ping{
+  background-color: white;
+  border-radius: 20px;
+  color: #1949A5;
+  font-weight: bold;
+  font-size: 70%;
+  padding: 2px;
+}
 /*En tete des différentes categories par exemple "Annonces"*/
 
 

@@ -18,4 +18,8 @@ export class AnnouncementsComponent implements OnInit {
   getAnnouncements(): void{
     this.service.getAnnouncements().subscribe(response => this.announcements = response);
   }
+  getAnnouncementsCount(): number | undefined{
+    // tslint:disable-next-line:no-unused-expression
+    return this.announcements?.length;
+  }
 }
