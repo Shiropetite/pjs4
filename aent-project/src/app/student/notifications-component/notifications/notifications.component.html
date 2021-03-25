@@ -1,4 +1,9 @@
-<div class="heading notifications flex-container">Notifications</div>
+<div class="heading notifications flex-container">
+  <span>Notifications
+    <span class ="ping">{{getNotificationCount()}}
+    </span>
+  </span>
+</div>
 <div class="contour">
   <app-notification *ngFor="let n of notifications" [notification]="n"></app-notification>
 </div>

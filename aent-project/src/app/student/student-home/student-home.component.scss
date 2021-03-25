@@ -1,20 +1,13 @@
 .box {
-  display: flex;
-  justify-content: space-between;
-  margin : 20px;
+  margin-top : 19px;
 }
 
-.sous_box {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 578px;
-}
+@media (min-width:1200px){
 
-.planning {
-  width: 27%;
-}
-.notification {
-  width: 27%;
+  .notifications{
+    margin-right: -50px;
+  }
+  .planning{
+    margin-left: -50px;
+  }
 }

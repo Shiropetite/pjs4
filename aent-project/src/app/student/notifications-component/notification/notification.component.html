@@ -1,23 +1,23 @@
 <div class="cardContainer" *ngIf="notification; else noNotification">
-  <div class="notificationCard">
-    <div class="notificationHeader">
+  <div class="cardCard">
+    <div class="cardHeader">
       {{notification.date | date:'EEEE d MMMM YYYY' : '' : 'fr'}}
     </div>
-    <div class="notificationContent">
+    <div class="cardContent">
       {{notification.content}}
     </div>
-    <div class="notificationFooter">
+    <div class="cardFooter">
       <a href=""> Lire la suite </a>
     </div>
   </div>
 </div>
 
 <ng-template #noNotification class="cardContainer">
-  <div class="notificationCard">
-    <div class="notificationHeader">
+  <div class="cardCard">
+    <div class="cardHeader">
       Aucune notification !
     </div>
-    <div class="notificationContent">
+    <div class="cardContent">
       Vous êtes à jour.
     </div>
   </div>

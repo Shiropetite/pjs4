@@ -19,4 +19,10 @@ export class AnnouncementsComponent implements OnInit {
   getAnnouncements(): void {
     this.serviceAnnouncement.getAnnouncements().subscribe(response => this.announcements = response);
   }
+  getAnnouncementsCount(): number | undefined{
+    if (this.announcements === undefined){
+      return 0;
+    }
+    return this.announcements?.length;
+  }
 }

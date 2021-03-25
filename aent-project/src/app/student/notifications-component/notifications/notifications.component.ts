@@ -18,5 +18,10 @@ export class NotificationsComponent implements OnInit {
   getNotification(): void{
     this.service.getNotifications().subscribe(response => this.notifications = response);
   }
-
+  getNotificationCount(): number | undefined{
+    if (this.notifications === undefined){
+      return 0;
+    }
+    return this.notifications?.length;
+  }
 }

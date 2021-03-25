@@ -1,4 +1,4 @@
-<div class="heading">Annonces</div>
+<div class="heading"><span>Annonces <span class="ping">{{getAnnouncementsCount()}}</span></span></div>
 <div class="contour">
 <app-announcement *ngFor="let a of announcements" [announcement]="a"></app-announcement>
 </div>

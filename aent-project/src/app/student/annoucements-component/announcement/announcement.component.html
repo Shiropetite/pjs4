@@ -1,10 +1,10 @@
 
 <div class="cardContainer" *ngIf="announcement; else noAnnouncement">
-  <div class="announcementCard">
-    <div class="announcementHeader">
+  <div class="cardCard">
+    <div class="cardHeader">
       {{announcement.author}} - {{announcement.date | date:'EEEE d MMMM YYYY' : '' : 'fr'}}
     </div>
-    <div class="announcementContent">
+    <div class="cardContent">
       <h2>{{announcement.title}}</h2>
          {{announcement.content}}
     </div>
@@ -15,11 +15,11 @@
 </div>
 
 <ng-template #noAnnouncement class="cardContainer">
-  <div class="announcementCard">
-    <div class="announcementHeader">
+  <div class="cardCard">
+    <div class="cardHeader">
       Aucune annonce!
     </div>
-    <div class="announcementContent">
+    <div class="cardContent">
       Vous êtes à jour.
     </div>
   </div>

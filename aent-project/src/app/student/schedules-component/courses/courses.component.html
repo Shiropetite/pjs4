@@ -2,7 +2,7 @@
   {{ today }}
 </div>
 
-<mat-list class="container">
+<mat-list class="containerCalendar">
   <mat-list-item *ngFor="let course of courses" (click)="onSelect(course);" [ngClass]="course.id === null ? 'no-course' : 'course'">
       <h3 matLine>{{toStringHours(course)}} <span *ngIf="course.id">- {{ course.name}}</span> </h3>
       <p matLine>
