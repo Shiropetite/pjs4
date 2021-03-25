@@ -1,8 +1,11 @@
 export interface Course {
   id: number;
   date: Date;
-  name: string;
-  abbr: string
+  subject: {
+    id: number,
+    name: string,
+    abbr: string
+  };
   room: string;
   teacher: string;
 }

@@ -1,12 +1,12 @@
 package com.enteam.app.controllers;
 
+import com.enteam.app.repositories.AnnouncementRepository;
+import com.enteam.app.repositories.StudentRepository;
 import com.enteam.app.ressouces.Announcement;
-import com.enteam.app.serviceImpl.AnnouncementServiceImplement;
+import com.enteam.app.serviceImpl.AnnouncementServiceImpl;
 import com.enteam.app.services.AnnouncementService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,13 +16,14 @@ import java.util.List;
 public class AnnouncementController {
     private AnnouncementService announcementServices;
 
-    public AnnouncementController() {
-        this.announcementServices = new AnnouncementServiceImplement();
+    @Autowired
+    public AnnouncementController(StudentRepository studentRepository, AnnouncementRepository announcementRepository) {
+      this.announcementServices = new AnnouncementServiceImpl(announcementRepository,studentRepository);
     }
 
-    @GetMapping
-    public List getAnnouncements(){
-        return this.announcementServices.getAnnouncements();
+    @GetMapping("{id}")
+    public List<Announcement> getAnnouncements(@PathVariable("id") Long id_student){
+        return this.announcementServices.getAnnouncements(id_student);
     }
 
 }

@@ -1,25 +1,27 @@
 <div class="menu">
   <app-navbar></app-navbar>
 </div>
-
-<div class="box">
-  <div class="planning">
-    <app-courses></app-courses>
-  </div>
-
-  <div class="sous_box">
-    <div class="annonce">
-      <app-announcements></app-announcements>
+<div class="container">
+  <div class="row ">
+    <div class="col-md-4">
+      <div class="box planning">
+        <app-courses></app-courses>
+      </div>
     </div>
-    <div class="task">
-      <app-todo-list></app-todo-list>
+
+    <div class="col-md-4 mid-col">
+      <div class="box">
+        <app-announcements></app-announcements>
+      </div>
+      <div class="box">
+        <app-todo-list></app-todo-list>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div class="box notifications">
+        <app-notifications></app-notifications>
+      </div>
     </div>
   </div>
-
-  <div class="notification">
-    <app-notifications></app-notifications>
-  </div>
-
 </div>
-
-

@@ -25,6 +25,13 @@ public class Notification {
 
     public Notification() { }
 
+    public Notification(int id, @NotNull Date date, @NotNull String content, @NotNull Student owner) {
+        this.id = id;
+        this.date = date;
+        this.content = content;
+        this.owner = owner;
+    }
+
     public int getId() {
         return id;
     }

@@ -5,7 +5,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './student/navbar/navbar.component';
 import { TaskComponent } from './student/todolist-component/task/task.component';
 import { TodoListComponent } from './student/todolist-component/todo-list/todo-list.component';
 import { NewTaskComponent } from './student/todolist-component/new-task/new-task.component';
@@ -25,6 +25,7 @@ import {AnnouncementsComponent} from './student/annoucements-component/announcem
 import { ChooseRoleComponent } from './connexion/choose-role/choose-role.component';
 import { StudentHomeComponent } from './student/student-home/student-home.component';
 import { LoginStudentComponent } from './connexion/login-student/login-student.component';
+import { GradesComponent } from './student/grades/grades.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -45,7 +46,8 @@ registerLocaleData(localeFr, 'fr');
     AnnouncementsComponent,
     ChooseRoleComponent,
     StudentHomeComponent,
-    LoginStudentComponent
+    LoginStudentComponent,
+    GradesComponent
   ],
   imports: [
     BrowserModule,

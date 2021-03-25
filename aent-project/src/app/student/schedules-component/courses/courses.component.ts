@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { COURSES } from '../mock-courses';
 import {Course} from '../course';
 import {MatDialog} from '@angular/material/dialog';
 import {CourseDetailsComponent} from '../course-details/course-details.component';
 import {formatDate} from '@angular/common';
 import {CoursesService} from '../services/courses.service';
+import {HOURS} from '../hours';
 
 @Component({
   selector: 'app-courses',
@@ -21,6 +21,33 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getDate();
     this.coursesService.getTodayCourses().subscribe(courses => this.courses = courses);
+    setTimeout(() =>
+    {
+      // on vérifie s'il y a des trou et on comble avec des cours 'null'
+      HOURS.forEach( (date) => {
+        let course = null;
+        this.courses.forEach((c) => {
+          c.date = new Date(c.date);
+          if (c.date.getHours() === date.getHours() && c.date.getMinutes() === date.getMinutes()) {
+            course = c;
+          }
+        });
+        if (course == null) {
+          const d =  new Date(Date.now());
+          d.setHours(date.getHours());
+          d.setMinutes(date.getMinutes());
+          d.setSeconds(date.getSeconds());
+          this.courses.push({id: null, date: d,
+            subject: null, teacher: '',  room: ''});
+        }
+      });
+
+      // on trie les cours par ordre croissant de date
+      this.courses.sort((course1, course2) => {
+        // @ts-ignore
+        return course1.date - course2.date;
+      });
+    }, 500);
   }
 
   toStringHours(course: Course): string {
@@ -44,7 +71,7 @@ export class CoursesComponent implements OnInit {
   }
 
   onSelect(course: Course): void {
-    if(course.id === null) {
+    if (course.id === null) {
       return;
     }
     this.selectedCourse = course;

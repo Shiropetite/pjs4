@@ -10,9 +10,8 @@ import {TodoService} from '../services/todo.service';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  tasks: Todo[] | undefined;
+  tasks: Todo[] = [];
   todo: Todo | undefined;
-  error: string | undefined;
 
   ngOnInit(): void {
   }
@@ -42,7 +41,7 @@ export class TodoListComponent implements OnInit {
   getTodos(): void {
     this.service.getTodos().subscribe(
       response => this.tasks = response,
-      error => this.error = error
+      error => this.tasks = []
     );
   }
 

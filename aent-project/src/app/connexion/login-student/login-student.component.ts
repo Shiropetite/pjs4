@@ -27,12 +27,18 @@ export class LoginStudentComponent implements OnInit {
   onSubmit(): void {
     const login = this.loginForm.value.login;
     const password = this.loginForm.value.password;
-
-    const id = this.serviceLogin.login(login, password);
-    if (id !== 0) {
-      sessionStorage.setItem('id', String(id));
-      this.router.navigateByUrl('/home_student/' + id);
-    }
+    let student = null;
+    this.serviceLogin.login(login, password).subscribe(response => student = response);
+    setTimeout(() =>
+    {
+      if (student != null) {
+        sessionStorage.setItem('id', String(student.id));
+        sessionStorage.setItem('email', student.email);
+        sessionStorage.setItem('nom', student.nom);
+        sessionStorage.setItem('prenom', student.prenom);
+        this.router.navigateByUrl('/home_student/' + student.id);
+      }
+    }, 500);
   }
 
 }

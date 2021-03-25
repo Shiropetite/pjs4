@@ -1,5 +1,10 @@
-<div class="heading">Annonces</div>
+<div class="heading">
+  <span> Annonces
+    <span class="ping"> {{getAnnouncementsCount()}}
+    </span>
+  </span>
+</div>
 <div class="contour">
-<app-announcement *ngFor="let a of announcements" [announcement]="a"></app-announcement>
-  <div class="no-announcements" *ngIf="announcements.length === 0"> Aucune annonces </div>
+  <app-announcement *ngFor="let a of announcements" [announcement]="a"></app-announcement>
+  <div class="no-announcements" *ngIf="announcements.length === 0"> Aucune annonces</div>
 </div>

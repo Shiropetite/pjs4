@@ -18,9 +18,10 @@ public class StudentController {
         this.service = new StudentServiceImpl(studentRepository);
     }
 
-    @GetMapping
-    public Student getStudent(String login, String password){
-        return this.service.getStudent(login, password);
+    @PutMapping()
+    public Student getStudent(@RequestBody String response){
+        String[] tab = response.split(",");
+        return this.service.getStudent(tab[0], tab[1]);
     }
 
     @GetMapping("/{id}")

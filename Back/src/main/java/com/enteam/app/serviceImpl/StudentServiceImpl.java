@@ -17,6 +17,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getStudent(String login, String password) {
+        System.out.println(login + " " + password);
         Optional<Student> student = this.studentRepository.findStudentByEmailAndPassword(login, password);
         return student.orElse(null);
     }

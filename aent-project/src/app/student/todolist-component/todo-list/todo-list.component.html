@@ -5,6 +5,7 @@
 <div class="task">
   <app-task *ngFor="let task of tasks" [task]="task">
   </app-task>
+  <div class="no-tasks" *ngIf="tasks.length === 0"> Aucune tâches à faire </div>
 </div>
 
 

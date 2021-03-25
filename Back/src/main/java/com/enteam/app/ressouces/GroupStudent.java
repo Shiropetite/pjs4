@@ -2,6 +2,7 @@ package com.enteam.app.ressouces;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity(name = "GroupStudent")
 public class GroupStudent {
@@ -11,6 +12,10 @@ public class GroupStudent {
 
     @NotNull
     private int number;
+
+    @NotNull
+    @ManyToMany
+    private List<Course> courses;
 
     public GroupStudent() { }
 
@@ -28,5 +33,13 @@ public class GroupStudent {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }

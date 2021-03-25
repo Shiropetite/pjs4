@@ -1,7 +1,6 @@
 package com.enteam.app.ressouces;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
@@ -25,9 +24,6 @@ public class Course {
 
     @NotNull
     private String teacher;
-
-    @ManyToMany
-    private List<GroupStudent> groups;
 
     public Course() { }
 
@@ -71,11 +67,4 @@ public class Course {
         this.teacher = teacher;
     }
 
-    public List<GroupStudent> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<GroupStudent> groups) {
-        this.groups = groups;
-    }
 }

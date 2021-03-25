@@ -23,4 +23,8 @@ export class NotificationsComponent implements OnInit {
       );
   }
 
+  getNotificationCount(): number {
+    return this.notifications.length;
+  }
+
 }

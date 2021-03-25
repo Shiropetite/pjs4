@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { COURSES } from '../mock-courses';
 import {Course} from '../course';
 
 

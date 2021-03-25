@@ -12,7 +12,7 @@ export class AnnouncementService {
   constructor( private http: HttpClient ) { }
 
   getAnnouncements(): Observable<Announcement[]> {
-    return this.http.get<Announcement[]>(this.url);
+    return this.http.get<Announcement[]>(this.url + '/' + sessionStorage.getItem('id'));
   }
 
 }

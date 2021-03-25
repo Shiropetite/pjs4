@@ -22,4 +22,8 @@ export class AnnouncementsComponent implements OnInit {
       () => this.announcements = []
     );
   }
+
+  getAnnouncementsCount(): number {
+    return this.announcements.length;
+  }
 }
