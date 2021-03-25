@@ -1,7 +1,11 @@
 package com.enteam.app.controllers;
 
+import com.enteam.app.repositories.StudentRepository;
+import com.enteam.app.repositories.TodoRepository;
 import com.enteam.app.ressouces.Todo;
+import com.enteam.app.serviceImpl.TodoServiceImpl;
 import com.enteam.app.services.TodoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,35 +16,29 @@ import java.util.List;
 public class TodoController {
     private final TodoService todoService;
 
-    private List<Todo> elems;
-
-    public TodoController(TodoService todoService) {
-        this.todoService = todoService;
-    }
-
-    //Methode Endpoint
-    @GetMapping
-    public List<Todo> getTodos(){
-        return todoService.getTodos();
+    @Autowired
+    public TodoController(TodoRepository repository, StudentRepository studentRepository) {
+        this.todoService = new TodoServiceImpl(repository, studentRepository);
     }
 
     @GetMapping("/{user}")
-    public Todo getTodoFromId(@PathVariable("user") Integer id){
+    public Todo[] getTodoFromId(@PathVariable("user") Long id){
         return todoService.getTodoFromId(id);
     }
 
-    @PostMapping
-    public boolean addTodo(@RequestBody Todo todo){
-        return todoService.addTodo(todo);
+    @PostMapping("/{user}")
+    public boolean addTodo(@PathVariable("user") Long id, @RequestBody Todo todo){
+
+        return todoService.addTodo(todo,id);
     }
 
     @DeleteMapping
-    public boolean removeTodo(@RequestParam("id") Integer todoid){
+    public boolean removeTodo(@RequestParam("id") Long todoid){
         return todoService.removeTodo(todoid);
     }
 
     @PutMapping
-    public Todo switchAckTodo(@RequestParam("id") Integer todoid){ //tick goes from T to F or F to T
+    public Todo switchAckTodo(@RequestParam("id") Long todoid){ //tick goes from T to F or F to T
         return todoService.switchAckTodo(todoid);
     }
 

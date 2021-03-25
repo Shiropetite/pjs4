@@ -11,18 +11,8 @@ import {Course} from '../course';
 })
 export class CourseDetailsComponent implements OnInit {
 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Course) { }
 
-  selectedCourse?: Course;
-  displayedColumns: string[] = [ 'hour', 'name', 'room', 'teacher'];
-  courses = COURSES;
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
-
-  ngOnInit(): void {
-  }
-
-  onSelect(course: Course): void {
-    this.selectedCourse = course;
-  }
+  ngOnInit(): void { }
 
 }

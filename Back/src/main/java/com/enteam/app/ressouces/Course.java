@@ -1,13 +1,14 @@
 package com.enteam.app.ressouces;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
-@Entity(name = "Announcement")
-public class Announcement {
+@Entity(name = "Course")
+public class Course {
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
@@ -16,19 +17,19 @@ public class Announcement {
     private Date date;
 
     @NotNull
-    private String author;
+    @ManyToOne
+    private Subject subject; // matiere
 
     @NotNull
-    private String title;
+    private String room;
 
     @NotNull
-    private String content;
+    private String teacher;
 
-    @NotNull
     @ManyToMany
     private List<GroupStudent> groups;
 
-    public Announcement() { }
+    public Course() { }
 
     public Long getId() {
         return id;
@@ -46,28 +47,28 @@ public class Announcement {
         this.date = date;
     }
 
-    public String getAuthor() {
-        return author;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
-    public String getTitle() {
-        return title;
+    public String getRoom() {
+        return room;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setRoom(String room) {
+        this.room = room;
     }
 
-    public String getContent() {
-        return content;
+    public String getTeacher() {
+        return teacher;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
     }
 
     public List<GroupStudent> getGroups() {

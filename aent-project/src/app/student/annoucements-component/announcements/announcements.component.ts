@@ -8,7 +8,7 @@ import {AnnouncementService} from '../service/announcement.service';
   styleUrls: ['./announcements.component.css']
 })
 export class AnnouncementsComponent implements OnInit {
-  announcements: Announcement[];
+  announcements: Announcement[] = [];
 
   constructor(private serviceAnnouncement: AnnouncementService) {  }
 
@@ -17,6 +17,9 @@ export class AnnouncementsComponent implements OnInit {
   }
 
   getAnnouncements(): void {
-    this.serviceAnnouncement.getAnnouncements().subscribe(response => this.announcements = response);
+    this.serviceAnnouncement.getAnnouncements().subscribe(
+      (response) => this.announcements = response,
+      () => this.announcements = []
+    );
   }
 }

@@ -13,7 +13,7 @@ public class AnnouncementServiceImplement implements AnnouncementService {
 
     public AnnouncementServiceImplement() {
         this.annoucements = new ArrayList<>();
-        this.annoucements.add(new Announcement(1,new Date(120, 7, 20),"Sebastien Martin","Retour en presentiel","blablbalbalbalbalblablablablablbalbalbalb"));
+        //this.annoucements.add(new Announcement(1L,new Date(120, 7, 20),"Sebastien Martin","Retour en presentiel","blablbalbalbalbalblablablablablbalbalbalb"));
     }
 
     @Override

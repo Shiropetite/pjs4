@@ -1,25 +1,23 @@
-.modal-header {
-  color: white;
-  background-color: #1949A5;
+.mat-dialog-title{
+  color: #3e5fa4;
+  text-align: center;
 }
 
 .error {
   color: red;
 }
 
-.close {
-  color: white;
-}
-
 .form-control {
   margin-bottom: 10px;
 }
 
-.btn {
+.mat-button {
   color: white;
-  background-color: #1949A5;
+  background-color: #3e5fa4;
 }
 
-.btn:hover {
-  background-color: #6c90d4;
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
 }
+

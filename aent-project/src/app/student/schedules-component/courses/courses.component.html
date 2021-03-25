@@ -4,7 +4,7 @@
 
 <mat-list class="container">
   <mat-list-item *ngFor="let course of courses" (click)="onSelect(course);" [ngClass]="course.id === null ? 'no-course' : 'course'">
-      <h3 matLine>{{toStringHours(course)}} <span *ngIf="course.id">- {{ course.name}}</span> </h3>
+      <h3 matLine>{{toStringHours(course)}} <span *ngIf="course.id">- {{ course.abbr}}</span> </h3>
       <p matLine>
         <span *ngIf="course.id" class="courses"> {{course.room}} </span>
         <mat-divider> </mat-divider>

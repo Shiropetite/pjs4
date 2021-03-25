@@ -37,16 +37,17 @@ export class CoursesComponent implements OnInit {
       + dayNumber + ' ' + month.charAt(0).toUpperCase() + month.substring(1);
   }
 
-  openCourseDetailsDialog(selectedCourse: Course | undefined): void {
+  openCourseDetailsDialog(): void {
     this.dialog.open(CourseDetailsComponent,  {
-      data : {
-      }
+      data :  this.selectedCourse,
     });
   }
 
   onSelect(course: Course): void {
-    // @ts-ignore
-    this.openCourseDetailsDialog();
+    if(course.id === null) {
+      return;
+    }
     this.selectedCourse = course;
+    this.openCourseDetailsDialog();
   }
 }

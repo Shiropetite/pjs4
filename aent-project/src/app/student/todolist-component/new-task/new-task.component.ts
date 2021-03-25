@@ -2,7 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Todo} from '../Todo';
 
-
 @Component({
   selector: 'app-new-task',
   templateUrl: './new-task.component.html',

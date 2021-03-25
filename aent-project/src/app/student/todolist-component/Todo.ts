@@ -4,6 +4,6 @@ export class Todo {
     public date: Date,
     public title: string,
     public description: string,
-    public tick: boolean
+    public tick: boolean,
   ) { }
 }

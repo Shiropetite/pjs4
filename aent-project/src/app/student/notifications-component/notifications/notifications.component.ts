@@ -7,7 +7,8 @@ import {NotificationService} from '../service/notification.service';
   styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent implements OnInit {
-  notifications: Notification[] | undefined;
+  notifications: Notification[] = [];
+
   constructor(private service: NotificationService) {
   }
 
@@ -16,7 +17,10 @@ export class NotificationsComponent implements OnInit {
   }
 
   getNotification(): void{
-    this.service.getNotifications().subscribe(response => this.notifications = response);
+    this.service.getNotifications().subscribe(
+        (response) => this.notifications = response,
+        () => this.notifications = []
+      );
   }
 
 }

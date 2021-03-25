@@ -15,21 +15,22 @@ public class Student {
     private Long id;
 
     @NotNull
+    private String prenom;
+
+    @NotNull
+    private String nom;
+
+    @NotNull
     private String email;
 
     @NotNull
     private String password;
 
     @NotNull
-    private int studentGroup;
+    @ManyToOne
+    private GroupStudent studentGroup;
 
     public Student() { }
-
-    public Student(String email, String password, int studentGroup) {
-        this.email = email;
-        this.password = password;
-        this.studentGroup = studentGroup;
-    }
 
     public Long getId() {
         return id;
@@ -37,6 +38,22 @@ public class Student {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getEmail() {
@@ -55,12 +72,11 @@ public class Student {
         this.password = password;
     }
 
-    public int getGroup() {
+    public GroupStudent getStudentGroup() {
         return studentGroup;
     }
 
-    public void setGroup(int groupe) {
-        this.studentGroup = groupe;
+    public void setStudentGroup(GroupStudent studentGroup) {
+        this.studentGroup = studentGroup;
     }
-
 }

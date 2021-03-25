@@ -1,4 +1,4 @@
-<div class="cardContainer" *ngIf="notification; else noNotification">
+<div class="cardContainer" *ngIf="notification">
   <div class="notificationCard">
     <div class="notificationHeader">
       <p>
@@ -7,18 +7,9 @@
     </div>
     <div class="notificationContent">
       <p>{{notification.content}}</p>
-      <a class="notificationFooter" href=""> Lire la suite </a>
+      <div class="notificationFooter">
+        <a href=""> Lire la suite </a>
+      </div>
     </div>
   </div>
 </div>
-
-<ng-template #noNotification class="cardContainer">
-  <div class="notificationCard">
-    <div class="notificationHeader">
-      Aucune notification !
-    </div>
-    <div class="notificationContent">
-      Vous êtes à jour.
-    </div>
-  </div>
-</ng-template>

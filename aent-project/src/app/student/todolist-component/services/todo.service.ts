@@ -12,11 +12,11 @@ export class TodoService {
   constructor( private http: HttpClient ) { }
 
   getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.url);
+    return this.http.get<Todo[]>(this.url + '/' + sessionStorage.getItem('id'));
   }
 
   addTodo(todo: Todo): Observable<Todo[]> {
-    return this.http.post<Todo[]>(this.url, todo);
+    return this.http.post<Todo[]>(this.url + '/' + sessionStorage.getItem('id'), todo);
   }
 
   changeCheckTodo(todo: Todo | undefined): Observable<Todo[]> {

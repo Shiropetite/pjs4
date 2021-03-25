@@ -22,17 +22,11 @@ public class Todo {
     @NotNull
     private boolean tick = false;
 
+    @NotNull
     @ManyToOne
     private Student owner;
 
     public Todo() { }
-
-    public Todo(Integer student, Date date, String title, String description, boolean tick) {
-        this.date = date;
-        this.title = title;
-        this.description = description;
-        this.tick = tick;
-    }
 
     public Integer getId() {
         return id;
@@ -42,9 +36,13 @@ public class Todo {
         this.id = id;
     }
 
-    public Date getDate(){return date;}
+    public Date getDate() {
+        return date;
+    }
 
-    public void setDate(Date date){this.date=date;}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public String getTitle() {
         return title;
@@ -62,30 +60,19 @@ public class Todo {
         this.description = description;
     }
 
-    public Student getUser() {
-        return owner;
-    }
-
-    public void setUser(Student owner) {
-        this.owner = owner;
-    }
-
     public boolean isTick() {
         return tick;
     }
 
-    public void setTick() {
-        this.tick = !this.tick;
+    public void setTick(boolean tick) {
+        this.tick = tick;
     }
 
-    public boolean isEqual(Todo todo){/*
-        return this.user.equals(todo.getUser())
-                && this.id.equals(todo.id)
-                && this.title.equals(todo.getTitle())
-                && this.date.equals(todo.getDate())
-                && this.description.equals(todo.getDescription())
-                && this.tick == todo.isTick();
-                */
-        return false;
+    public Student getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Student owner) {
+        this.owner = owner;
     }
 }

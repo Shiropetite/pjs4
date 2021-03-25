@@ -16,6 +16,13 @@
   color: white;
 }
 
+.no-announcements {
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
   background-color: #5D6DB3;

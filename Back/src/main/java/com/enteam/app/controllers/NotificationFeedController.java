@@ -24,10 +24,7 @@ public class NotificationFeedController {
 
     @GetMapping
     public List<Notification> getNotificationFeed(){
-        return Arrays.asList(
-                new Notification(1,new Date(121,3,20),"You were absent on the 36/02/24, please contact your administration to justify your absence"),
-                new Notification(2,new Date(121,2,20),"haha code funny")
-        );
+        return Arrays.asList();
     }
 
 }

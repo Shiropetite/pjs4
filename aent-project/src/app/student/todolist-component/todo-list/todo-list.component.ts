@@ -42,7 +42,6 @@ export class TodoListComponent implements OnInit {
   getTodos(): void {
     this.service.getTodos().subscribe(
       response => this.tasks = response,
-      // TODO : faire qqlchose quand erreur
       error => this.error = error
     );
   }
