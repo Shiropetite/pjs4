@@ -1,6 +1,6 @@
-package Repository;
+package repositories;
 
-import data.Student;
+import ressouces.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
 
-    public Optional<Student[]> findStudentsByStudentEquals(long id);
+    public Optional<Student> findStudentByEmailAndPassword(String login, String password);
 
 }
