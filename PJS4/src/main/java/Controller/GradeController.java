@@ -1,23 +1,26 @@
 package Controller;
 
+import Repository.GradeRepository;
+import Service.GradeService;
+import ServiceImplement.GradeServiceImplement;
 import com.enteam.app.demo.Grade;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/api/Grade")
 public class GradeController {
-    private ArrayList <Grade> grades;
+    private GradeService gradeService;
 
-    @PostMapping
-    public ArrayList PostGrade (){
-        return grades;
+    @Autowired
+    public GradeController(GradeRepository gradeRepository) {
+        this.gradeService = new GradeServiceImplement(gradeRepository);
     }
 
-    public void addGrade (@PathVariable("id") String id){
-        Grade grade; //recup sur la base
-        grades.add(grade);
+
+    public void getGrade (@PathVariable("id") int id){
+        gradeService.getGrades(id);
     }
 
 }
