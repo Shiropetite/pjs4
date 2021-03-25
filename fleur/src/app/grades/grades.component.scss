@@ -1,0 +1,85 @@
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+}
+
+table,th, td {
+  border: 1px solid #1D314F;
+}
+
+table {
+  width: 90%;
+}
+
+// Style du header du tableau (sticky au scroll)
+th {
+  height: 50px;
+  text-align: center;
+  background-color: #89A2CC;
+  position: sticky;
+  top: 0;
+}
+// Hauteur des cellules des cours
+td {
+  height: 60px;
+  max-width: 20px;
+  padding-right: 2px;
+}
+
+h3 {
+  padding-left: 3%;
+}
+
+// Scrollbar qui apparaît au besoin
+.wrapper{
+  height: 550px;
+  overflow-y:auto;
+  margin-top: 1rem;
+}
+
+.vide {
+  border: none;
+}
+
+.moyG {
+  vertical-align:bottom;
+  text-align:right;
+}
+
+.grade {
+  vertical-align:bottom;
+  text-align:right;
+}
+
+.grade p .coef {
+  font-style: italic;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.grade b {
+  font-family: Arial Narrow,Arial,sans-serif;
+
+}
+
+.coef {
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+.type {
+  vertical-align:top;
+  text-align:left;
+  font-family: Arial Narrow, Arial, sans-serif;
+  font-size: 12px;
+}
+
+
+.UE {
+height: 10px;
+}

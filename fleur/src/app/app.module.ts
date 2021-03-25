@@ -18,6 +18,7 @@ import {MaterialModule} from './material/material.module';
 registerLocaleData(localeFr, 'fr');
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { GradesComponent } from './grades/grades.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     NotificationsComponent,
     TodolistComponent,
     AnnouncementsComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    GradesComponent
   ],
   entryComponents:[CourseDetailsComponent],
   imports: [
