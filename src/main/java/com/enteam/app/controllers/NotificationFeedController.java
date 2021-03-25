@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -20,15 +19,13 @@ public class NotificationFeedController {
     }
 
     @GetMapping
-    public List<Notification> getNotificationFeed(){
-        return Arrays.asList(
-                new Notification("1","Absence","You were absent on the 36/02/24, please contact your administration to justify your absence","Important"),
-                new Notification("2","Annonce","haha code funny","Basic")
-        );
+    public List<Notification> getNotificationFeedByUser(Integer i){
+        return notificationFeedService.getNotificationFeedByUserOrderByDate(i);
     }
 
-    /*public List<Notification> getNotificationFeedFromId(@PathVariable("id") String id){
-        //filters url that filter through
-    }*/
+    @GetMapping
+    public boolean clearNotificationFeedItem(Integer i){
+        return notificationFeedService.clearNotif(i);
+    }
 
 }

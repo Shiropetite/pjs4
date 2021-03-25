@@ -1,29 +1,34 @@
 package com.enteam.app.notifying;
 
+import java.util.Date;
+
 public class Notification {
 
     private String label;
-    private String id;
-    private String description;
-    private String type;
+    private Integer id;
+    private Date date;
+    private String content;
+    private Integer user;
 
-    public Notification(String id,String lab,String desc,String type){
+    public Notification(Integer id,String lab,String desc,Integer s,Date d){
         this.label= lab;
         this.id = id;
-        this.description = desc;
-        this.type = type;
+        this.content = desc;
+        this.user = s;
+        this.date=d;
     }
 
     public String getLabel(){
         return this.label;
     }
-    public String getId(){
+    public Integer getId(){
         return this.id;
     }
     public String getDescription(){
-        return this.description;
+        return this.content;
     }
-    public String getType(){
-        return this.type;
+    public Integer getType(){
+        return this.user;
     }
+    public Date getDate(){return this.date;}
 }

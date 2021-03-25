@@ -18,7 +18,7 @@ public class TodoServiceImpl implements TodoService {
         dataBank.add(new Todo(2,6,new Date(1121, Calendar.DECEMBER,30),"Construire plus de pylones","Alien noise", false));
         dataBank.add(new Todo(3,5,new Date(121, Calendar.DECEMBER,17),"Faire un tedTalk sur les transphobe","Angery SJW screech", false));
     }
-    public Todo toDelete = null;
+
 
     @Override
     public ArrayList<Todo> getTodos() {
@@ -43,6 +43,7 @@ public class TodoServiceImpl implements TodoService {
     }
 
     public boolean removeTodo(Integer todoid) {
+        Todo toDelete = null;
         for (Todo todo : dataBank) {
             if (todo.getId().equals(todoid)) toDelete = todo;
         }
