@@ -9,14 +9,14 @@
         <th colspan="6">Notes détaillées</th>
       </tr>
       <tr><td colspan="8" class="UE"><b>UE 25 Informatique avancée</b></td></tr>
-      <tr *ngFor="let grade of grades">
-        <td>{{grade.class}}</td>
-        <td class="moy">Moyenne matière</td>
-        <td class="grade">55577855</td>
-        <td class="grade">55577855</td>
-        <td class="grade">55577855</td>
-        <td class="grade">55577855</td>
-        <td class="grade">55577855</td>
+      <tr *ngFor="let grade of grades" >
+        <td *ngFor="let course of courses" ><b class="courseName">{{course.name}}</b><p class="teacher">{{course.teacher}}</p></td>
+        <td class="moy">{{((grade.grade)*(grade.coef))/(20*grade.coef)*20 | number:'1.2': 'fr'}}</td>
+        <td class="grade"><p class="type">{{grade.type}}</p><p class="coef">Coef. {{grade.coef | number:'1.2'}}</p><b>{{grade.grade | number:'1.2': 'fr'}}</b></td>
+        <td class="grade"><p class="type">{{grade.type}}</p><p class="coef">Coef. {{grade.coef | number:'1.2'}}</p><b>{{grade.grade | number:'1.2': 'fr'}}</b></td>
+        <td class="grade"><p class="type">{{grade.type}}</p><p class="coef">Coef. {{grade.coef | number:'1.2'}}</p><b>{{grade.grade | number:'1.2': 'fr'}}</b></td>
+        <td class="grade"><p class="type">{{grade.type}}</p><p class="coef">Coef. {{grade.coef | number:'1.2'}}</p><b>{{grade.grade | number:'1.2': 'fr'}}</b></td>
+        <td class="grade"><p class="type">{{grade.type}}</p><p class="coef">Coef. {{grade.coef | number:'1.2'}}</p><b>{{grade.grade | number:'1.2': 'fr'}}</b></td>
         <td class="grade"><p class="type">{{grade.type}}</p><p class="coef">Coef. {{grade.coef | number:'1.2'}}</p><b>{{grade.grade | number:'1.2': 'fr'}}</b></td>
       </tr>
       <tfoot>

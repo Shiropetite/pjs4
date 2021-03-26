@@ -1,6 +1,7 @@
+
 export interface Class {
+  id: number;
   name: string;
   UE: string;
-  grades: object;
   teacher: string;
 }

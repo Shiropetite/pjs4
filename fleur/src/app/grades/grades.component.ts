@@ -10,8 +10,8 @@ import {CLASSES} from '../mock-class';
 export class GradesComponent implements OnInit {
 
   grades = GRADES;
-  classes = CLASSES;
-  enzoGrades = GRADES.findIndex(student => "Enzo");
+  courses = CLASSES;
+
 
   constructor() {
 
@@ -19,6 +19,7 @@ export class GradesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 
 }
