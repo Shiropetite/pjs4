@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChooseRoleComponent } from './choose-role.component';
+import { GradeTabComponent } from './grade-tab.component';
 
-describe('ChooseRoleComponent', () => {
-  let component: ChooseRoleComponent;
-  let fixture: ComponentFixture<ChooseRoleComponent>;
+describe('GradeTabComponent', () => {
+  let component: GradeTabComponent;
+  let fixture: ComponentFixture<GradeTabComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChooseRoleComponent ]
+      declarations: [ GradeTabComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChooseRoleComponent);
+    fixture = TestBed.createComponent(GradeTabComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

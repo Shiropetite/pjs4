@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+<mat-tab-group animationDuration="0ms">
+  <mat-tab *ngFor="let semester of semesters" label="Semestre {{semester.number}}">
+    <app-grade-tab [grades]="grades"> </app-grade-tab>
+  </mat-tab>
+</mat-tab-group>

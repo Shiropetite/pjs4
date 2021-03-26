@@ -32,14 +32,14 @@ public class TodoController {
         return todoService.addTodo(todo,id);
     }
 
-    @DeleteMapping
-    public boolean removeTodo(@RequestParam("id") Long todoid){
+    @DeleteMapping("{id}")
+    public boolean removeTodo(@PathVariable("id") Long todoid){
         return todoService.removeTodo(todoid);
     }
 
     @PutMapping
-    public Todo switchAckTodo(@RequestParam("id") Long todoid){ //tick goes from T to F or F to T
-        return todoService.switchAckTodo(todoid);
+    public Todo switchAckTodo(@RequestBody Todo todo){ //tick goes from T to F or F to T
+        return todoService.switchAckTodo(todo);
     }
 
 }

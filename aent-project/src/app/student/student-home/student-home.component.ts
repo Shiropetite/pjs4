@@ -10,7 +10,6 @@ export class StudentHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('aaaaaaaaaaa');
   }
 
 }

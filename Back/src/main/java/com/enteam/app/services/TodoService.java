@@ -10,5 +10,5 @@ public interface TodoService {
 
     public boolean removeTodo(Long toDoId);
 
-    public Todo switchAckTodo(Long toDoId);
+    public Todo switchAckTodo(Todo todo);
 }

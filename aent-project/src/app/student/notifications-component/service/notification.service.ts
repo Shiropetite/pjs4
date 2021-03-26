@@ -11,6 +11,6 @@ export class NotificationService {
   constructor( private http: HttpClient ) { }
 
   getNotifications(): Observable<Notification[]>{
-    return this.http.get<Notification[]>(this.url);
+    return this.http.get<Notification[]>(this.url + '/' + sessionStorage.getItem('id'));
   }
 }

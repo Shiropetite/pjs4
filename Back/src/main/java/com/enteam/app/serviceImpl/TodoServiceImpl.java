@@ -33,26 +33,24 @@ public class TodoServiceImpl implements TodoService {
         return t != null;
     }
 
+    @Override
     public boolean removeTodo(Long todoid) {
-        /*
-        for (Todo todo : dataBank) {
-            if (todo.getId().equals(todoid)) toDelete = todo;
+        Optional<Todo> todo = this.repository.findById(todoid);
+        if(todo.isPresent()) {
+            this.repository.delete(todo.get());
+            return true;
         }
-        if (toDelete == null) return false;
-        dataBank.remove(toDelete);
-         */
-        return true;
+        return false;
     }
 
-    public Todo switchAckTodo(Long todoid) {
-        /*
-        for (int i = 0; i < dataBank.size(); ++i) {
-            if (dataBank.get(i).getId().equals(todoid)) {
-                dataBank.get(i).setTick();
-                return dataBank.get(i);
-            }
-        }*/
-        return null;
+    @Override
+    public Todo switchAckTodo(Todo todo) {
+        Optional<Todo> t = this.repository.findById(todo.getId());
+        if(t.isPresent()) {
+            t.get().setTick(!t.get().isTick());
+            this.repository.save(t.get());
+        }
+        return t.orElse(null);
     }
 
 }

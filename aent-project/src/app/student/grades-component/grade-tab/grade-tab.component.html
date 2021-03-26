@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <table class="center" *ngFor="let ue of ues">
+    <tr>
+      <th>Matières</th>
+      <th scope="col">Moyenne</th>
+      <th colspan="6">Notes détaillées</th>
+    </tr>
+
+    <tr>
+      <td colspan="8" class="UE"><b> {{ ue.name }}</b></td>
+    </tr>
+    <tr class="matiere" *ngFor="let course of getClasseByUE(ue)">
+      <td><b class="courseName">{{course.name}}</b>
+        <p class="teacher">{{course.teacher}}</p></td>
+      <td class="moy"><span class="moy">{{calculMoyenne(course) | number:'1.2': 'fr'}}</span></td>
+      <td class="grade" *ngFor="let grade of getGradesBtClasse(course)">
+        <p class="type">{{grade.title}}</p>
+        <p class="coef"> Coef. {{grade.coef | number:'1.2'}}</p>
+        <b>{{grade.grade | number:'1.2': 'fr'}}</b>
+      </td>
+    </tr>
+
+    <tfoot>
+    <tr>
+      <td class="moyG">MOYENNE GENERALE</td>
+      <td class="moyGNum"> {{ this.calculMoyenneG(ue) | number:'1.2': 'fr'}} </td>
+    </tr>
+    </tfoot>
+  </table>
+
+
+</div>
+

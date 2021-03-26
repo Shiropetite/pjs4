@@ -32,7 +32,7 @@ export class TodoListComponent implements OnInit {
         setTimeout(() =>
           {
             this.getTodos();
-          }, 500);
+          }, 700);
       }
     });
   }

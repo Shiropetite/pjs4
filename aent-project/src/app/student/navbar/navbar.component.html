@@ -1,7 +1,8 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <span>ENT</span>
-    <span routerLink="'grades_student/'{{id}}")> </span>
+    <span (click)="goToHome()">ENT</span>
+    <span> | </span>
+    <span (click)="goToGrades()"> Notes </span>
     <span class="example-spacer"></span>
     <span> Bonjour {{name}} </span>
     <span> | </span>

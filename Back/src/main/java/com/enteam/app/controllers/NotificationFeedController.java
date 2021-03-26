@@ -1,37 +1,34 @@
 package com.enteam.app.controllers;
 
-import com.enteam.app.repositories.StudentRepository;
+import com.enteam.app.repositories.NotificationRepository;
 import com.enteam.app.ressouces.Notification;
-import com.enteam.app.ressouces.Student;
+import com.enteam.app.serviceImpl.NotificationServiceImpl;
 import com.enteam.app.services.NotificationFeedService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.JstlUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/api/notificationFeed")
 public class NotificationFeedController {
+    private NotificationFeedService service;
 
-    private final NotificationFeedService notificationFeedService;
-    private StudentRepository studentRepository;
-
-    public NotificationFeedController(NotificationFeedService notificationFeedService, StudentRepository studentRepository) {
-        this.notificationFeedService = notificationFeedService;
-        this.studentRepository = studentRepository;
+    @Autowired
+    public NotificationFeedController(NotificationRepository repository) {
+        this.service = new NotificationServiceImpl(repository);
     }
 
-    @GetMapping
-    public List<Notification> getNotificationFeed(){
-        return Arrays.asList(
-                new Notification(1,new Date(),"Va manger tes morts", this.studentRepository.findById(1L).orElse(null))
-        );
+    @GetMapping("{id}")
+    public List<Notification> getNotificationFeed(@PathVariable("id") Long id){
+        return Arrays.asList(this.service.getNotificationFeedByUserOrderByDate(id).clone());
+    }
+
+    @DeleteMapping("{id}")
+    public boolean clearNotificationFeedItem(@PathVariable("id") Long i){
+        return this.service.clearNotif(i);
     }
 
 }

@@ -22,10 +22,10 @@ import {AnnouncementComponent} from './student/annoucements-component/announceme
 import {NotificationComponent} from './student/notifications-component/notification/notification.component';
 import {NotificationsComponent} from './student/notifications-component/notifications/notifications.component';
 import {AnnouncementsComponent} from './student/annoucements-component/announcements/announcements.component';
-import { ChooseRoleComponent } from './connexion/choose-role/choose-role.component';
 import { StudentHomeComponent } from './student/student-home/student-home.component';
 import { LoginStudentComponent } from './connexion/login-student/login-student.component';
-import { GradesComponent } from './student/grades/grades.component';
+import { GradesComponent } from './student/grades-component/grades/grades.component';
+import { GradeTabComponent } from './student/grades-component/grade-tab/grade-tab.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -44,10 +44,10 @@ registerLocaleData(localeFr, 'fr');
     NotificationComponent,
     NotificationsComponent,
     AnnouncementsComponent,
-    ChooseRoleComponent,
     StudentHomeComponent,
     LoginStudentComponent,
-    GradesComponent
+    GradesComponent,
+    GradeTabComponent
   ],
   imports: [
     BrowserModule,

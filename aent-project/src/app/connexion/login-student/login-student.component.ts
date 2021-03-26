@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {LoginService} from '../login.service';
+import {LoginService} from '../service/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -32,11 +32,12 @@ export class LoginStudentComponent implements OnInit {
     setTimeout(() =>
     {
       if (student != null) {
-        sessionStorage.setItem('id', String(student.id));
+        sessionStorage.setItem('id', student.id);
         sessionStorage.setItem('email', student.email);
         sessionStorage.setItem('nom', student.nom);
         sessionStorage.setItem('prenom', student.prenom);
-        this.router.navigateByUrl('/home_student/' + student.id);
+
+        this.router.navigateByUrl(('/home_student/' + student.id));
       }
     }, 500);
   }
